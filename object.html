@@ -109,8 +109,9 @@ btn.addEventListener('click', function() {
   };
 
   //  email check
-  let checkEmail = data.some(function(item) {
-    return item.email === student.email;
+  let checkEmail = data.some(function(value) {
+    let check = value.email === student.email;
+    return check;
   });
 
   if (checkEmail) {
