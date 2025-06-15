@@ -1,0 +1,143 @@
+<html>
+<head>
+
+    <style>
+
+
+
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #ccc;
+}
+
+#form {
+  margin: 5% 35%;
+  background-color: f9f9f9;
+  padding: 20px 30px 15px;
+  border-radius: 20px;
+  box-shadow: 13px 13px 35px #ccc;
+  font-weight: bold;
+}
+h1 {
+  margin: 10px 0px 20px;
+}
+
+p,
+button {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 23px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ccc;
+  height: 42px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+    </style>
+
+
+</head>
+
+
+<body>
+    <div id="form">
+
+          <h1>Login Form:</h1>
+
+        <label>Full Name:
+        <input type="text" id="name" placeholder="Enter Name" />
+        </label>
+
+        <label>Email Address:
+        <input type="email" id="email" placeholder="Email Address" />
+        </label>
+
+
+        <label>Password:
+        <input type="password" id="password" placeholder="Enter Password">
+        </label>
+
+        <label>Contact No:
+        <input type="number" name="" id="contact" placeholder="Enter Contact Num" />
+        </label>
+
+
+
+        <button type="submit" id="btn"> Submit </button>
+
+    </div>
+
+
+
+    <script>
+    
+    let name = document.getElementById('name');
+    let email = document.getElementById('email');
+    let password = document.getElementById('password');
+    let contact = document.getElementById('contact');
+    let btn = document.getElementById('btn');
+    
+    let data =[]
+    
+  
+btn.addEventListener('click', function() {
+
+  // Student object bana lo
+  let student = {
+    name: name.value,
+    email: email.value,
+    password: password.value,
+    contact: contact.value
+  };
+
+  // Duplicate email check
+  let checkEmail = data.some(function(item) {
+    return item.email === student.email;
+  });
+
+  if (checkEmail) {
+    alert("Error: Email already exists!");
+    console.log("Error: Email already exists!");
+    
+    
+  } else {
+    data.push(student); // new student ko data me add karo
+    alert("Data added successfully!");
+    console.log("Data added successfully!");
+    
+  }
+  
+  console.log(data)
+
+  // Inputs clear kar do
+  name.value = "";
+  email.value = "";
+  password.value = "";
+  contact.value = "";
+});
+              
+    
+    
+    </script>
+
+
+</body>
+</html>
