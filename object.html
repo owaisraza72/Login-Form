@@ -100,7 +100,7 @@ button {
   
 btn.addEventListener('click', function() {
 
-  // Student object bana lo
+  //  ya Student object bana 
   let student = {
     name: name.value,
     email: email.value,
@@ -108,7 +108,7 @@ btn.addEventListener('click', function() {
     contact: contact.value
   };
 
-  // Duplicate email check
+  //  email check
   let checkEmail = data.some(function(item) {
     return item.email === student.email;
   });
@@ -119,7 +119,7 @@ btn.addEventListener('click', function() {
     
     
   } else {
-    data.push(student); // new student ko data me add karo
+    data.push(student); //push new student ko data me add karo
     alert("Data added successfully!");
     console.log("Data added successfully!");
     
@@ -127,7 +127,6 @@ btn.addEventListener('click', function() {
   
   console.log(data)
 
-  // Inputs clear kar do
   name.value = "";
   email.value = "";
   password.value = "";
